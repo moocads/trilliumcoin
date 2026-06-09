@@ -48,7 +48,7 @@ export default function Header() {
           </a>
         ))}
         <a href="#contact" className="btn-primary px-6 py-3 text-[14.5px]">
-          Start Trading
+          Login
         </a>
       </nav>
 

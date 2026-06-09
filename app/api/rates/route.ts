@@ -4,18 +4,29 @@ export const revalidate = 60;
 
 const IDS = ["bitcoin", "ethereum", "tether"] as const;
 
-type RateData = Record<string, { cad: number; cad_24h_change: number }>;
+type Rate = { cad: number; cad_24h_change: number; spark: number[] };
+type RateData = Record<string, Rate>;
+
+const fbSpark = (base: number) =>
+  Array.from({ length: 24 }, (_, i) => base * (1 + 0.01 * Math.sin(i / 2)));
 
 const FALLBACK: RateData = {
-  bitcoin: { cad: 103820, cad_24h_change: 2.41 },
-  ethereum: { cad: 4985, cad_24h_change: 1.18 },
-  tether: { cad: 1.37, cad_24h_change: -0.03 },
+  bitcoin: { cad: 103820, cad_24h_change: 2.41, spark: fbSpark(103820) },
+  ethereum: { cad: 4985, cad_24h_change: 1.18, spark: fbSpark(4985) },
+  tether: { cad: 1.37, cad_24h_change: -0.03, spark: fbSpark(1.37) },
+};
+
+type MarketCoin = {
+  id: string;
+  current_price: number;
+  price_change_percentage_24h: number;
+  sparkline_in_7d?: { price: number[] };
 };
 
 export async function GET() {
   const url =
-    "https://api.coingecko.com/api/v3/simple/price" +
-    `?ids=${IDS.join(",")}&vs_currencies=cad&include_24hr_change=true`;
+    "https://api.coingecko.com/api/v3/coins/markets" +
+    `?vs_currency=cad&ids=${IDS.join(",")}&sparkline=true&price_change_percentage=24h`;
 
   try {
     const res = await fetch(url, {
@@ -23,16 +34,25 @@ export async function GET() {
         accept: "application/json",
         "x-cg-demo-api-key": process.env.COINGECKO_KEY ?? "",
       },
-      // Cache upstream response and revalidate at most once per minute.
       next: { revalidate: 60 },
     });
 
     if (!res.ok) throw new Error(`coingecko ${res.status}`);
 
-    const data = (await res.json()) as RateData;
+    const raw = (await res.json()) as MarketCoin[];
+    const rates: RateData = {};
+    for (const c of raw) {
+      const prices = c.sparkline_in_7d?.price ?? [];
+      rates[c.id] = {
+        cad: c.current_price,
+        cad_24h_change: c.price_change_percentage_24h,
+        // last ~24 hourly points => trailing 24 hours
+        spark: prices.slice(-24),
+      };
+    }
 
     return NextResponse.json(
-      { rates: data, updatedAt: Date.now(), live: true },
+      { rates, updatedAt: Date.now(), live: true },
       {
         headers: {
           "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120",
