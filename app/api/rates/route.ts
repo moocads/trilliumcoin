@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export const revalidate = 60;
 
-const IDS = ["bitcoin", "ethereum", "tether"] as const;
+const IDS = ["bitcoin", "ethereum", "solana"] as const;
 
 type Rate = { cad: number; cad_24h_change: number; spark: number[] };
 type RateData = Record<string, Rate>;
@@ -13,7 +13,7 @@ const fbSpark = (base: number) =>
 const FALLBACK: RateData = {
   bitcoin: { cad: 103820, cad_24h_change: 2.41, spark: fbSpark(103820) },
   ethereum: { cad: 4985, cad_24h_change: 1.18, spark: fbSpark(4985) },
-  tether: { cad: 1.37, cad_24h_change: -0.03, spark: fbSpark(1.37) },
+  solana: { cad: 230, cad_24h_change: 1.05, spark: fbSpark(230) },
 };
 
 type MarketCoin = {

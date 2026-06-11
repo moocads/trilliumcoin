@@ -6,7 +6,7 @@ const FROM_EMAIL = "noreply@trilliumcoin.ca";
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 export async function POST(req: Request) {
-  let body: { name?: string; phone?: string; email?: string };
+  let body: { name?: string; phone?: string; email?: string; message?: string };
   try {
     body = await req.json();
   } catch {
@@ -16,6 +16,7 @@ export async function POST(req: Request) {
   const name = (body.name ?? "").trim();
   const phone = (body.phone ?? "").trim();
   const email = (body.email ?? "").trim();
+  const userMsg = (body.message ?? "").trim();
 
   if (!name || !phone || !email) {
     return NextResponse.json({ error: "All fields are required." }, { status: 400 });
@@ -34,14 +35,18 @@ export async function POST(req: Request) {
 
   const text = `New subscription from the Trillium Coin website:
 
-Name:  ${name}
-Phone: ${phone}
-Email: ${email}`;
+Name:    ${name}
+Phone:   ${phone}
+Email:   ${email}${userMsg ? `\nMessage: ${userMsg}` : ""}`;
 
   const html = `<h2>New subscription</h2>
 <p><strong>Name:</strong> ${escapeHtml(name)}</p>
 <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-<p><strong>Email:</strong> ${escapeHtml(email)}</p>`;
+<p><strong>Email:</strong> ${escapeHtml(email)}</p>${
+    userMsg
+      ? `<p><strong>Message:</strong></p><blockquote style="border-left:3px solid #ccc;margin:0;padding:0 12px;color:#444">${escapeHtml(userMsg).replace(/\n/g, "<br>")}</blockquote>`
+      : ""
+  }`;
 
   try {
     const res = await fetch("https://api.sendgrid.com/v3/mail/send", {

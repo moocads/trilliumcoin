@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   TokenBTC,
   TokenETH,
-  TokenUSDT,
   TokenBNB,
   TokenSOL,
   TokenUSDC,
@@ -38,8 +37,7 @@ const FIATS: Fiat[] = [
 // stablecoins first, then majors, then the rest
 const CRYPTOS: Crypto[] = [
   { id: "usd-coin", code: "USDC", Icon: TokenUSDC },
-  { id: "tether", code: "USDT", Icon: TokenUSDT },
-  { id: "bitcoin", code: "BTC", Icon: TokenBTC },
+  { id: "Crypto", code: "BTC", Icon: TokenBTC },
   { id: "ethereum", code: "ETH", Icon: TokenETH },
   { id: "solana", code: "SOL", Icon: TokenSOL },
   { id: "binancecoin", code: "BNB", Icon: TokenBNB },
@@ -52,7 +50,7 @@ const CRYPTOS: Crypto[] = [
 // approximate USD price per coin + USD->fiat multipliers, used to build the
 // fallback grid shown before live data loads (every coin/fiat pair is covered)
 const CRYPTO_USD: Record<string, number> = {
-  bitcoin: 74000,
+  Crypto: 74000,
   ethereum: 3550,
   tether: 1,
   binancecoin: 600,

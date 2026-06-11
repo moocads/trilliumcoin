@@ -5,13 +5,13 @@ import ExchangeCalculator from "./ExchangeCalculator";
 const SERVICES = [
   {
     icon: <Icon.arrowRight width={22} height={22} />,
-    title: "Buy Bitcoin",
-    body: "Fund with cash, bank wire, EMT, or EFT and receive Bitcoin to your own wallet. Competitive rates with no hidden fees, settled quickly.",
+    title: "Buy Crypto",
+    body: "Fund with cash, bank wire, EMT, or EFT and receive Crypto to your own wallet. Competitive rates with no hidden fees, settled quickly.",
   },
   {
     icon: <Icon.send width={20} height={20} />,
-    title: "Sell Bitcoin",
-    body: "Send your Bitcoin and receive Canadian dollars through your preferred local payout method. Larger trades get one-on-one OTC handling.",
+    title: "Sell Crypto",
+    body: "Send your Crypto and receive Canadian dollars through your preferred local payout method. Larger trades get one-on-one OTC handling.",
   },
 ];
 
@@ -25,10 +25,10 @@ export default function BuySell() {
         <div>
           <span className="kicker">Our Service</span>
           <h2 className="text-[30px] font-extrabold leading-[1.15] tracking-[-0.6px] sm:text-[40px]">
-            Buy / Sell Bitcoin
+            Buy / Sell Crypto
           </h2>
           <p className="mt-4 max-w-[520px] text-[16px] leading-[1.6] text-white/[0.78]">
-            Two simple paths, one trusted desk. Whether you are converting cash into Bitcoin or
+            Two simple paths, one trusted desk. Whether you are converting cash into Crypto or
             cashing out to CAD, we handle the trade with clear pricing and personal support.
           </p>
 
@@ -51,10 +51,10 @@ export default function BuySell() {
 
           <div className="mt-8 flex flex-wrap gap-3.5 max-[420px]:flex-col">
             <a href="#contact" className="btn-primary max-[420px]:w-full">
-              Buy Bitcoin <Icon.arrowRight width={17} height={17} strokeWidth={2.4} />
+              Buy Crypto <Icon.arrowRight width={17} height={17} strokeWidth={2.4} />
             </a>
             <a href="#contact" className="btn-secondary max-[420px]:w-full">
-              Sell Bitcoin
+              Sell Crypto
             </a>
           </div>
         </div>

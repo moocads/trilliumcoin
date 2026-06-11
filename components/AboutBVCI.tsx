@@ -4,7 +4,7 @@ import Image from "next/image";
 const TRUST = [
   { icon: <Icon.building width={20} height={20} className="text-tc-light-blue" />, title: "Incorporated in Ontario", sub: "Blockchain Venture Capital Inc. (BVCI)" },
   { icon: <Icon.shield width={20} height={20} className="text-tc-light-blue" />, title: "FINTRAC-registered MSB", sub: "#M19821264" },
-  { icon: <Icon.spark width={20} height={20} className="text-tc-light-blue" />, title: "Public company", sub: "Listed on the CSE under ticker BVC" },
+  { icon: <Icon.spark width={20} height={20} className="text-tc-light-blue" />, title: "Public company", sub: "Listed on the CSE under ticker BVCI" },
 ];
 
 export default function AboutBVCI() {
@@ -26,7 +26,7 @@ export default function AboutBVCI() {
             </h2>
           </div>
           <p className="mb-[18px] max-w-[560px] text-[16px] leading-[1.7] text-white/[0.82]">
-            Trillium Coin is a division of <a href="https://www.bvc.com" target="_blank" className="text-tc-orange">Blockchain Venture Capital Inc. (CSE: BVC)</a>, a Canadian
+            Trillium Coin is a division of <a href="https://www.bvc.com" target="_blank" className="text-tc-orange">Blockchain Venture Capital Inc. (CSE: BVCI)</a>, a Canadian
             company incorporated in Ontario and registered as a Money Services Business with FINTRAC.
           </p>
           <p className="mb-[18px] max-w-[560px] text-[16px] leading-[1.7] text-white/[0.82]">

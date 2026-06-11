@@ -1,7 +1,7 @@
 # Trillium Coin — Homepage (Next.js + Tailwind)
 
-Reliable & simple Bitcoin trading landing page for Trillium Coin (a division of
-Blockchain Venture Capital Inc. / CSE: BVC).
+Reliable & simple Crypto trading landing page for Trillium Coin (a division of
+Blockchain Venture Capital Inc. / CSE: BVCI).
 
 ## Stack
 - Next.js 14 (App Router) + TypeScript
@@ -25,7 +25,7 @@ components/
   Header.tsx        Sticky nav + Start Trading CTA
   Hero.tsx          Hero copy, trust badges, payment strip (server)
   LiveRates.tsx     Live BTC/ETH/USDT → CAD rates ('use client', CoinGecko, 60s refresh)
-  BuySell.tsx       Buy / Sell Bitcoin cards
+  BuySell.tsx       Buy / Sell Crypto cards
   Advantages.tsx    6 advantage cards (compliance card featured)
   HowItWorks.tsx    3-step process on orange gradient
   AboutBVCI.tsx     Corporate trust section
@@ -41,5 +41,5 @@ components/
   Next.js route handler) to avoid rate limits and add caching. "Indicative rates"
   wording is intentional for compliance (not a tradable quote).
 - **QR code**: `Contact.tsx` uses a decorative placeholder. Swap in a real QR
-  (WhatsApp/WeChat or bitcoin@bvcpay.com) before launch.
+  (WhatsApp/WeChat or Crypto@bvcpay.com) before launch.
 - **Mobile menu**: the hamburger button is present but not yet wired to a drawer.

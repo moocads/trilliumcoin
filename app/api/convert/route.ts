@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const revalidate = 60;
 
 const IDS = [
-  "bitcoin",
+  "Crypto",
   "ethereum",
   "tether",
   "binancecoin",

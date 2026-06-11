@@ -9,18 +9,18 @@ const FAQS = [
   },
   {
     q: "Do I need to complete KYC?",
-    a: "Yes. As a FINTRAC-registered MSB we complete a quick KYC verification before your first trade. This keeps the service compliant and secure for everyone.",
+    a: "It depends on the size of your trade. Under Canadian regulations, cash purchases or sales of crypto under $1,000 CAD within a 24-hour period do not require KYC. For trades at or above that threshold, we are required as a FINTRAC-registered MSB to complete a quick identity verification before settlement. This keeps our service fully compliant and secure for everyone.",
   },
   {
     q: "What is an e-wallet and where can I get one?",
     a: "An e-wallet is used to store, send, and receive crypto. It can be downloaded as an app from the App Store or Google Play.",
   },
   {
-    q: "What are Binance and Coinbase?",
-    a: "Binance and Coinbase are cryptocurrency trading platforms. They let users buy, sell, store, and transfer digital assets such as cryptocurrencies.",
+    q: "What is an OTC Desk? How is it different from a CEX or DEX?",
+    a: "A CEX (Centralized Exchange) is a platform run by a single company — like Binance, Coinbase, or Kraken — where you trade on a public order book and the exchange holds your funds. A DEX (Decentralized Exchange) is a peer-to-peer marketplace like Uniswap or PancakeSwap where you trade directly from your own wallet via smart contracts, with no middleman. An OTC Desk (Over-The-Counter Desk) is a private, direct trading service for individuals or businesses who want to buy or sell crypto without placing orders on a public exchange — avoiding price slippage and getting personalized support. Trillium Coin is an OTC Desk.",
   },
   {
-    q: "How long does a Bitcoin transaction take?",
+    q: "How long does a Crypto transaction take?",
     a: "Most trades settle quickly once funds and KYC are confirmed. Network confirmation times can vary slightly depending on blockchain conditions.",
   },
   {

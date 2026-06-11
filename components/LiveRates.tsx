@@ -1,19 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { TokenBTC, TokenETH, TokenSOL, type IconComponent } from "@web3icons/react";
 
 type Coin = {
   id: string;
   name: string;
   symbol: string;
-  glyph: string;
-  iconClass: string;
+  Icon: IconComponent;
 };
 
 const COINS: Coin[] = [
-  { id: "bitcoin", name: "Bitcoin", symbol: "BTC / CAD", glyph: "₿", iconClass: "from-[#F7931A] to-[#FDB94E]" },
-  { id: "ethereum", name: "Ethereum", symbol: "ETH / CAD", glyph: "Ξ", iconClass: "from-[#627EEA] to-[#8FA4F3]" },
-  { id: "tether", name: "Tether", symbol: "USDT / CAD", glyph: "₮", iconClass: "from-[#26A17B] to-[#3FD8A4]" },
+  { id: "bitcoin",  name: "Bitcoin",  symbol: "BTC / CAD", Icon: TokenBTC },
+  { id: "ethereum", name: "Ethereum", symbol: "ETH / CAD", Icon: TokenETH },
+  { id: "solana",   name: "Solana",   symbol: "SOL / CAD", Icon: TokenSOL },
 ];
 
 type Rate = { cad: number; cad_24h_change: number; spark?: number[] };
@@ -22,11 +22,10 @@ type RateData = Record<string, Rate>;
 const fbSpark = (base: number) =>
   Array.from({ length: 24 }, (_, i) => base * (1 + 0.01 * Math.sin(i / 2)));
 
-// Fallback values shown before the first fetch resolves or if the API is unreachable.
 const FALLBACK: RateData = {
-  bitcoin: { cad: 103820, cad_24h_change: 2.41, spark: fbSpark(103820) },
-  ethereum: { cad: 4985, cad_24h_change: 1.18, spark: fbSpark(4985) },
-  tether: { cad: 1.37, cad_24h_change: -0.03, spark: fbSpark(1.37) },
+  bitcoin:  { cad: 103820, cad_24h_change: 2.41, spark: fbSpark(103820) },
+  ethereum: { cad: 4985,   cad_24h_change: 1.18, spark: fbSpark(4985)   },
+  solana:   { cad: 230,    cad_24h_change: 1.05, spark: fbSpark(230)    },
 };
 
 function fmt(n: number) {
@@ -131,9 +130,7 @@ export default function LiveRates() {
               className="mb-[11px] flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-[14px] transition-colors hover:border-white/20 hover:bg-white/[0.08]"
             >
               <div className="flex min-w-0 items-center gap-3">
-                <span className={`grid h-[38px] w-[38px] flex-none place-items-center rounded-full bg-gradient-to-br ${c.iconClass} text-lg font-extrabold text-white`}>
-                  {c.glyph}
-                </span>
+                <c.Icon variant="branded" size={38} className="flex-none rounded-full" />
                 <span className="min-w-0">
                   <b className="block text-[15px] font-extrabold leading-tight">{c.name}</b>
                   <span className="text-[12px] font-semibold text-tc-muted-purple">{c.symbol}</span>

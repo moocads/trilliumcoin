@@ -8,6 +8,7 @@ export default function SubscribeForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [msgText, setMsgText] = useState("");
   const [consent, setConsent] = useState(true);
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
@@ -29,7 +30,7 @@ export default function SubscribeForm() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, email }),
+        body: JSON.stringify({ name, phone, email, message: msgText }),
       });
       const data = await res.json().catch(() => ({}));
 
@@ -44,6 +45,7 @@ export default function SubscribeForm() {
       setName("");
       setPhone("");
       setEmail("");
+      setMsgText("");
       setConsent(false);
     } catch {
       setStatus("error");
@@ -108,6 +110,20 @@ export default function SubscribeForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             className={inputClass}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="sub-message" className="mb-1.5 block text-[13px] font-semibold text-white/70">
+            Message <span className="font-normal text-white/40">(optional)</span>
+          </label>
+          <textarea
+            id="sub-message"
+            rows={3}
+            value={msgText}
+            onChange={(e) => setMsgText(e.target.value)}
+            placeholder="Tell us about your trading needs…"
+            className={inputClass + " resize-none"}
           />
         </div>
 

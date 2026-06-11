@@ -11,9 +11,9 @@ const redHatDisplay = Red_Hat_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Trillium Coin — Reliable & Simple Bitcoin Trading in Canada",
+  title: "Trillium Coin — Reliable & Simple Crypto Trading in Canada",
   description:
-    "Buy and sell Bitcoin with competitive pricing, local Canadian payment methods, and one-on-one support from a FINTRAC-registered MSB operated by a Canadian public company.",
+    "Buy and sell Crypto with competitive pricing, local Canadian payment methods, and one-on-one support from a FINTRAC-registered MSB operated by a Canadian public company.",
 };
 
 export default function RootLayout({

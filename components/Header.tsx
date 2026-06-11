@@ -8,7 +8,7 @@ const NAV = [
   ["Advantages", "#advantages"],
   ["How It Works", "#how"],
   ["About BVCI", "#about"],
-  ["Contact", "#contact"],
+
 ];
 
 export default function Header() {
@@ -48,7 +48,7 @@ export default function Header() {
           </a>
         ))}
         <a href="#contact" className="btn-primary px-6 py-3 text-[14.5px]">
-          Login
+          Subscribe
         </a>
       </nav>
 

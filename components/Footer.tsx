@@ -1,7 +1,7 @@
 import Image from "next/image";
 const LINKS = {
   Service: [
-    ["Buy / Sell Bitcoin", "#buy-sell"],
+    ["Buy / Sell Crypto", "#buy-sell"],
     ["Advantages", "#advantages"],
     ["How It Works", "#how"],
     ["FAQ", "#faq"],
@@ -22,8 +22,8 @@ export default function Footer() {
       
           </div>
           <p className="mt-3.5 max-w-[330px] text-[14px] leading-[1.5] text-white">
-            A reliable Canadian Bitcoin trading service, operated by Blockchain Venture Capital Inc.
-            (CSE: BVC) and registered as a Money Services Business with FINTRAC.
+            A reliable Canadian Crypto trading service, operated by Blockchain Venture Capital Inc.
+            (CSE: BVCI) and registered as a Money Services Business with FINTRAC.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
 
       <div className="mx-auto mt-9 flex max-w-[1200px] flex-wrap justify-between gap-3 border-t border-white/10 pt-[22px] text-[12.5px] leading-[1.6] text-tc-muted-purple">
         <span>© {new Date().getFullYear()} Blockchain Venture Capital Inc. All rights reserved.</span>
-        <span>Registered MSB with FINTRAC #M19821264 · CSE: BVC · 647-767-6158</span>
+        <span>Registered MSB with FINTRAC #M19821264 · CSE: BVCI · 647-767-6158</span>
       </div>
     </footer>
   );

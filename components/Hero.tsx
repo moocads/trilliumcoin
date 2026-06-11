@@ -3,7 +3,7 @@ import DotGrid from "./DotGrid";
 import { Icon } from "./icons";
 import { CA } from "country-flag-icons/react/3x2";
 
-const PAY = ["Cash", "Bank Wire", "EMT", "EFT", "Bitcoin"];
+const PAY = ["Cash", "Bank Wire", "EMT", "EFT", "Crypto"];
 
 export default function Hero() {
   return (
@@ -36,26 +36,26 @@ export default function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-tc-light-blue/30 bg-tc-light-blue/10 px-[15px] py-[7px] text-[12.5px] font-bold uppercase tracking-[0.4px] text-tc-light-blue">
        <CA width={14} height={14} className="text-tc-light-blue" />
-            Canadian Bitcoin Service
+            Canadian Crypto Service
           </span>
 
           <h1 className="mb-[18px] mt-[22px] text-[38px] font-extrabold leading-[1.05] tracking-[-1px] sm:text-[46px] lg:text-[56px]">
             Reliable and simple{" "}
             <span className="bg-gradient-to-r from-tc-orange-light to-tc-orange bg-clip-text text-transparent">
-              Bitcoin trading
+              Crypto trading
             </span>{" "}
             with Trillium Coin
           </h1>
 
           <p className="mb-[30px] max-w-[520px] text-[15px] leading-[1.6] text-white/80 sm:text-[17px]">
-            Buy and sell Bitcoin with competitive pricing, local Canadian payment methods, and{" "}
+            Buy and sell Crypto with competitive pricing, local Canadian payment methods, and{" "}
             <span className="font-bold text-white">one-on-one support</span> — from a FINTRAC-registered MSB
             operated by a Canadian public company.
           </p>
 
           <div className="mb-[30px] flex flex-wrap gap-3.5 max-[520px]:flex-col">
             <a href="#buy-sell" className="btn-primary max-[520px]:w-full">
-              Buy / Sell Bitcoin <Icon.arrowRight width={17} height={17} strokeWidth={2.4} />
+              Buy / Sell Crypto <Icon.arrowRight width={17} height={17} strokeWidth={2.4} />
             </a>
             <a href="#contact" className="btn-secondary max-[520px]:w-full">
               Contact Us
@@ -64,7 +64,17 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-2.5">
             <span className="badge"><Icon.shield width={14} height={14} className="text-tc-light-blue" />FINTRAC MSB #M19821264</span>
-            <span className="badge"><Icon.building width={14} height={14} className="text-tc-light-blue" />CSE: BVC</span>
+            <span className="badge"><Icon.building width={14} height={14} className="text-tc-light-blue" />CSE: BVCI</span>
+          </div>
+
+          {/* OTC identity clarification */}
+          <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-[13px] text-white/70">
+            <span className="font-bold text-white">Trillium Coin is an OTC Desk —</span>
+            <span>not a CEX like Binance or Coinbase,</span>
+            <span>and not a DEX like Uniswap.</span>
+            <a href="#faq" className="font-semibold text-tc-light-blue underline-offset-2 hover:underline">
+              What's the difference?
+            </a>
           </div>
         </div>
 
