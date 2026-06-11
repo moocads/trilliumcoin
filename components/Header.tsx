@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header
       className={
-        "fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 transition-all duration-300 sm:px-8 lg:px-16 " +
+        "fixed inset-x-0 top-8 z-50 flex items-center justify-between px-5 transition-all duration-300 sm:px-8 lg:px-16 " +
         (scrolled
           ? "border-b border-white/10 bg-tc-blue-deep/70 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent py-[22px]")

@@ -9,7 +9,7 @@ const FAQS = [
   },
   {
     q: "Do I need to complete KYC?",
-    a: "It depends on the size of your trade. Under Canadian regulations, cash purchases or sales of crypto under $1,000 CAD within a 24-hour period do not require KYC. For trades at or above that threshold, we are required as a FINTRAC-registered MSB to complete a quick identity verification before settlement. This keeps our service fully compliant and secure for everyone.",
+    a: "It depends on the size of your trade. Under Canadian regulations, cash purchases or sales of crypto <span class='font-bold text-tc-orange'>under $1,000 CAD</span> within a 24-hour period do <span class='font-bold text-tc-orange'>not</span> require KYC. For trades at or above that threshold, we are required as a FINTRAC-registered MSB to complete a quick identity verification before settlement. This keeps our service fully compliant and secure for everyone.",
   },
   {
     q: "What is an e-wallet and where can I get one?",
@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "What is an OTC Desk? How is it different from a CEX or DEX?",
-    a: "A CEX (Centralized Exchange) is a platform run by a single company — like Binance, Coinbase, or Kraken — where you trade on a public order book and the exchange holds your funds. A DEX (Decentralized Exchange) is a peer-to-peer marketplace like Uniswap or PancakeSwap where you trade directly from your own wallet via smart contracts, with no middleman. An OTC Desk (Over-The-Counter Desk) is a private, direct trading service for individuals or businesses who want to buy or sell crypto without placing orders on a public exchange — avoiding price slippage and getting personalized support. Trillium Coin is an OTC Desk.",
+    a: "A <span class='font-bold text-tc-orange'>CEX (Centralized Exchange)</span> is a platform run by a single company — like Binance, Coinbase, or Kraken — where you trade on a public order book and the exchange holds your funds. A <span class='font-bold text-tc-orange'>DEX (Decentralized Exchange)</span> is a peer-to-peer marketplace like Uniswap or PancakeSwap where you trade directly from your own wallet via smart contracts, with no middleman. An <span class='font-bold text-tc-orange'>OTC Desk (Over-The-Counter Desk)</span> is a private, direct trading service for individuals or businesses who want to buy or sell crypto without placing orders on a public exchange — avoiding price slippage and getting personalized support. Trillium Coin is an OTC Desk.",
   },
   {
     q: "How long does a Crypto transaction take?",
@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: "Do you support large trades or OTC clients?",
-    a: "Yes. Larger trades receive one-on-one OTC handling with personalized pricing and dedicated support from our team.",
+    a: " <span class='font-bold text-tc-orange'>Yes</span>. Larger trades receive one-on-one OTC handling with personalized pricing and dedicated support from our team.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function FAQ() {
                   style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-[22px] text-[14.5px] leading-[1.65] text-tc-off-white">{f.a}</p>
+                    <p className="px-6 pb-[22px] text-[14.5px] leading-[1.65] text-tc-off-white" dangerouslySetInnerHTML={{ __html: f.a }} />
                   </div>
                 </div>
               </div>

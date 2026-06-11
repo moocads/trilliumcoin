@@ -32,7 +32,7 @@ export default function Hero() {
       </svg>
       <div className="pointer-events-none absolute -right-28 -top-20 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(253,83,58,.35)_0%,rgba(253,83,58,0)_70%)] blur-[10px]" />
 
-      <div className="relative z-[5] mx-auto grid max-w-[1320px] items-center gap-10 px-5 pb-7 pt-[120px] sm:px-8 lg:grid-cols-[48%_52%] lg:px-16 lg:pb-14 lg:pt-[150px]">
+      <div className="relative z-[5] mx-auto grid max-w-[1320px] items-center gap-10 px-5 pb-7 pt-[152px] sm:px-8 lg:grid-cols-[48%_52%] lg:px-16 lg:pb-14 lg:pt-[180px]">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-tc-light-blue/30 bg-tc-light-blue/10 px-[15px] py-[7px] text-[12.5px] font-bold uppercase tracking-[0.4px] text-tc-light-blue">
        <CA width={14} height={14} className="text-tc-light-blue" />
@@ -67,15 +67,6 @@ export default function Hero() {
             <span className="badge"><Icon.building width={14} height={14} className="text-tc-light-blue" />CSE: BVCI</span>
           </div>
 
-          {/* OTC identity clarification */}
-          <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-[13px] text-white/70">
-            <span className="font-bold text-white">Trillium Coin is an OTC Desk —</span>
-            <span>not a CEX like Binance or Coinbase,</span>
-            <span>and not a DEX like Uniswap.</span>
-            <a href="#faq" className="font-semibold text-tc-light-blue underline-offset-2 hover:underline">
-              What's the difference?
-            </a>
-          </div>
         </div>
 
         <div className="flex justify-center max-lg:order-2">
