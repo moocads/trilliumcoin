@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Icon } from "./icons";
 import SubscribeForm from "./SubscribeForm";
+import DotGrid from "./DotGrid";
 
 const CONTACTS = [
   { icon: <Icon.phone width={20} height={20} className="text-tc-light-blue" />, label: "Call us", value: "647-767-6158", href: "tel:6477676158" },
@@ -10,8 +11,10 @@ const CONTACTS = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-tc-blue-deep px-5 py-16 sm:px-8 lg:px-16 lg:py-28">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+    <section id="contact" className="relative overflow-hidden bg-tc-blue-deep px-5 py-16 sm:px-8 lg:px-16 lg:py-28">
+      <DotGrid className="pointer-events-none absolute inset-0 z-0 h-full w-full" />
+
+      <div className="relative z-[1] mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <span className="kicker text-tc-orange">Get In Touch</span>
           <h2 className="mb-[22px] text-[28px] font-extrabold leading-[1.15] tracking-[-0.6px] sm:text-[40px]">

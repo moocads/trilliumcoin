@@ -10,25 +10,68 @@ export default function Hero() {
     <section className="bg-hero relative overflow-hidden">
       <DotGrid className="pointer-events-none absolute inset-0 z-[1] h-full w-full" />
 
-      {/* arc / network pattern */}
+      {/* arc / network pattern with animated nodes */}
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full opacity-90"
         viewBox="0 0 1440 760"
         preserveAspectRatio="xMaxYMid slice"
         fill="none"
       >
+        <defs>
+          <filter id="glow-blue" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+          <filter id="glow-orange" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="3.5" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+
+        {/* arc paths */}
         <g stroke="rgba(255,255,255,0.18)" strokeWidth={1.2}>
           <path d="M1700 -120 A 900 900 0 0 0 540 900" />
           <path d="M1780 -40 A 980 980 0 0 0 640 1000" />
           <path d="M1620 -200 A 820 820 0 0 0 460 820" />
         </g>
-        <g stroke="rgba(160,218,243,0.22)" strokeWidth={1}>
-          <circle cx="1180" cy="150" r="3.5" fill="rgba(160,218,243,0.5)" />
-          <circle cx="980" cy="430" r="3" fill="rgba(253,83,58,0.6)" />
-          <circle cx="1300" cy="520" r="2.5" fill="rgba(160,218,243,0.4)" />
-          <line x1="1180" y1="150" x2="980" y2="430" />
-          <line x1="980" y1="430" x2="1300" y2="520" />
-        </g>
+
+        {/* node 1 — light blue, arc 1 */}
+        <circle r="3.5" fill="rgba(160,218,243,0.9)" filter="url(#glow-blue)">
+          <animateMotion
+            path="M1700 -120 A 900 900 0 0 0 540 900"
+            dur="9s"
+            repeatCount="indefinite"
+            keyPoints="0;1;0"
+            keyTimes="0;0.5;1"
+            calcMode="linear"
+          />
+        </circle>
+
+        {/* node 2 — orange, arc 2, offset start */}
+        <circle r="3" fill="rgba(253,83,58,0.85)" filter="url(#glow-orange)">
+          <animateMotion
+            path="M1780 -40 A 980 980 0 0 0 640 1000"
+            dur="13s"
+            begin="-5s"
+            repeatCount="indefinite"
+            keyPoints="0;1;0"
+            keyTimes="0;0.5;1"
+            calcMode="linear"
+          />
+        </circle>
+
+        {/* node 3 — light blue, arc 3, offset start */}
+        <circle r="2.5" fill="rgba(160,218,243,0.75)" filter="url(#glow-blue)">
+          <animateMotion
+            path="M1620 -200 A 820 820 0 0 0 460 820"
+            dur="11s"
+            begin="-3s"
+            repeatCount="indefinite"
+            keyPoints="0;1;0"
+            keyTimes="0;0.5;1"
+            calcMode="linear"
+          />
+        </circle>
       </svg>
       <div className="pointer-events-none absolute -right-28 -top-20 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(253,83,58,.35)_0%,rgba(253,83,58,0)_70%)] blur-[10px]" />
 

@@ -13,18 +13,18 @@ export default function AboutBVCI() {
       <div className="mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <span className="kicker text-tc-orange">Corporate Trust</span>
-          <div className="mb-5 flex items-center gap-4">
+        
             <Image
-              src="/images/bvcadt-logo.png"
+              src="/images/bv-logo-white.png"
               alt="BVCI Logo"
-              width={70}
+              width={200}
               height={100}
               className="flex-none"
             />
             <h2 className="text-[28px] font-extrabold leading-[1.18] tracking-[-0.6px] sm:text-[38px]">
-              Backed by <span className="text-tc-orange">Blockchain Venture Capital Inc.</span>
+              Backed by <br/>Blockchain Venture Capital Inc.
             </h2>
-          </div>
+      
           <p className="mb-[18px] max-w-[560px] text-[16px] leading-[1.7] text-white/[0.82]">
             Trillium Coin is a division of <a href="https://www.bvc.com" target="_blank" className="text-tc-orange">Blockchain Venture Capital Inc. (CSE: BVCI)</a>, a Canadian
             company incorporated in Ontario and registered as a Money Services Business with FINTRAC.

@@ -14,6 +14,10 @@
     html {
       scroll-behavior: auto;
     }
+    /* freeze SMIL animations on arc nodes */
+    animateMotion {
+      animation-play-state: paused;
+    }
   }
   body {
     @apply bg-tc-blue-deep text-white font-sans antialiased;

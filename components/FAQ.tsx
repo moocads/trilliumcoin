@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import DotGrid from "./DotGrid";
 
 const FAQS = [
   {
@@ -33,8 +34,10 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-blue-band px-5 py-16 sm:px-8 lg:px-16 lg:py-28">
-      <div className="mx-auto max-w-[1200px]">
+    <section id="faq" className="relative overflow-hidden bg-blue-band px-5 py-16 sm:px-8 lg:px-16 lg:py-28">
+      <DotGrid className="pointer-events-none absolute inset-0 z-0 h-full w-full" />
+
+      <div className="relative z-[1] mx-auto max-w-[1200px]">
         <div className="mx-auto mb-12 max-w-[680px] text-center lg:mb-[60px]">
           <span className="kicker text-tc-orange">Questions</span>
           <h2 className="text-[30px] font-extrabold leading-[1.15] tracking-[-0.6px] sm:text-[40px]">
