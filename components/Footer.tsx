@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-[1200px] gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/images/trillium-coin-logo.png" alt="Trillium Coin Logo" width={300} height={100} />
+            <Image src="/images/trillium-coin-logo-old.png" alt="Trillium Coin Logo" width={300} height={100} />
       
           </div>
           <p className="mt-3.5 max-w-[330px] text-[14px] leading-[1.5] text-white">
