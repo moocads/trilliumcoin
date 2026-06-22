@@ -5,7 +5,7 @@ import DotGrid from "./DotGrid";
 
 const CONTACTS = [
   { icon: <Icon.phone width={20} height={20} className="text-tc-light-blue" />, label: "Call us", value: "647-767-6158", href: "tel:6477676158" },
-  { icon: <Icon.mail width={20} height={20} className="text-tc-light-blue" />, label: "Email", value: "crypto@bvcpay.com", href: "mailto:crypto@bvcpay.com" },
+  { icon: <Icon.mail width={20} height={20} className="text-tc-light-blue" />, label: "Email", value: "bitcoin@bvcpay.com", href: "mailto:bitcoin@bvcpay.com" },
   { icon: <Icon.pin width={20} height={20} className="text-tc-light-blue" />, label: "Visit", value: "7030 Woodbine Ave #500, Markham, ON L3R 6G2", href: "https://maps.google.com/?q=7030+Woodbine+Ave+%23500+Markham+ON" },
 ];
 
