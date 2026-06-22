@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const TO_EMAIL = "info@moocads.com";
+const TO_EMAIL = "crypto@bvcpay.com";
 const FROM_EMAIL = "noreply@trilliumcoin.ca";
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
